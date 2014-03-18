@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <Resource
+            name="jms/ConnectionFactory"
+            auth="Container"
+            type="org.apache.activemq.ActiveMQConnectionFactory"
+            description="JMS Connection Factory"
+            factory="org.apache.activemq.jndi.JNDIReferenceFactory"
+            brokerURL="tcp://localhost:61616"
+            brokerName="LocalActiveMQBroker"
+            useEmbeddedBroker="true"/>
+ 
+    <Resource name="jms/queue/MyQueue"
+              auth="Container"
+              type="org.apache.activemq.command.ActiveMQQueue"
+              factory="org.apache.activemq.jndi.JNDIReferenceFactory"
+              physicalName="MY.TEST.FOO.QUEUE"/>
+</Context>
